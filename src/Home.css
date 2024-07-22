@@ -1,0 +1,118 @@
+/* Home.css */
+
+body, html, #root {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 48px; /* Başlık boyutunu artırdım */
+    color: #333;
+  }
+  
+  .score-display {
+    font-size: 32px; /* Skor boyutunu artırdım */
+    background-color: #f8f9fa;
+    padding: 15px 30px; /* Padding'i artırdım */
+    border-radius: 10px; /* Köşe yarıçapını artırdım */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px; /* Alt marjını artırdım */
+  }
+  
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 300px; /* Kart boyutunu artırdım */
+    height: 300px; /* Kart boyutunu artırdım */
+  }
+  
+  .count-button {
+    width: 150px; /* Buton boyutunu artırdım */
+    height: 150px; /* Buton boyutunu artırdım */
+    border-radius: 50%;
+    font-size: 36px; /* Buton yazı boyutunu artırdım */
+    cursor: pointer;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .count-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s;
+  }
+  
+  .count-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .count-button:active {
+    transform: scale(0.95);
+  }
+  
+  .count-button:active::before {
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0s;
+  }
+  
+  .character {
+    width: 90%; /* Resim boyutunu artırdım */
+    height: 90%; /* Resim boyutunu artırdım */
+    pointer-events: none; /* Resmin tıklanabilirliğini kapatır */
+  }
+  
+  .ghost-point {
+    position: absolute;
+    font-size: 24px; /* Hayalet puan boyutunu artırdım */
+    color: red;
+    animation: fadeOutUp 1s forwards;
+    pointer-events: none; /* Hayalet puanın tıklanabilirliğini kapatır */
+  }
+  
+  @keyframes fadeOutUp {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -150%);
+    }
+  }
+  
